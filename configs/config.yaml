@@ -1,0 +1,34 @@
+project:
+  name: kidney-disease-classification-mlops
+  version: "1.0.0"
+
+data:
+  split_dir: data/splits
+  manifest: data/splits/data_manifest_unique.csv
+  classes:
+    - Cyst
+    - Normal
+    - Stone
+    - Tumor
+  num_classes: 4
+
+training:
+  image_size:
+    - 224
+    - 224
+  batch_size: 16
+  seed: 42
+  epochs: 25
+
+model:
+  baseline_architecture: VGG16
+  weights: imagenet
+  include_top: false
+
+evaluation:
+  test_split: test
+
+inference:
+  image_size:
+    - 224
+    - 224

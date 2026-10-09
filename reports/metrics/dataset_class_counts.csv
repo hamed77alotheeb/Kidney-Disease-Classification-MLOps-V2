@@ -1,0 +1,13 @@
+split,class,image_count
+train,Cyst,2298
+train,Normal,3501
+train,Stone,951
+train,Tumor,1598
+val,Cyst,492
+val,Normal,750
+val,Stone,204
+val,Tumor,342
+test,Cyst,494
+test,Normal,751
+test,Stone,205
+test,Tumor,343

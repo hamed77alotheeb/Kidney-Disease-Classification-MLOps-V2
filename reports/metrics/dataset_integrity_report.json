@@ -1,0 +1,51 @@
+{
+  "project": "Kidney-Disease-Classification-MLOps-V2",
+  "audit_timestamp": "2026-10-09T10:33:28",
+  "dataset": {
+    "total_images": 11929,
+    "unique_images": 11929,
+    "manifest_entries": 11929,
+    "classes": [
+      "Cyst",
+      "Normal",
+      "Stone",
+      "Tumor"
+    ],
+    "split_counts": {
+      "train": 8348,
+      "val": 1788,
+      "test": 1793
+    },
+    "class_counts": {
+      "train": {
+        "Cyst": 2298,
+        "Normal": 3501,
+        "Stone": 951,
+        "Tumor": 1598
+      },
+      "val": {
+        "Cyst": 492,
+        "Normal": 750,
+        "Stone": 204,
+        "Tumor": 342
+      },
+      "test": {
+        "Cyst": 494,
+        "Normal": 751,
+        "Stone": 205,
+        "Tumor": 343
+      }
+    }
+  },
+  "integrity_checks": {
+    "files_missing_from_manifest": 0,
+    "manifest_files_missing_on_disk": 0,
+    "sha256_mismatches": 0,
+    "unmatched_manifest_entries": 0,
+    "train_validation_exact_hash_overlap": 0,
+    "train_test_exact_hash_overlap": 0,
+    "validation_test_exact_hash_overlap": 0,
+    "result": "PASS",
+    "scope": "Exact SHA-256 duplicate integrity check. Patient-level leakage and near-duplicate images have not yet been assessed."
+  }
+}

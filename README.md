@@ -4,6 +4,14 @@
 
 ### نظام تصنيف صور الكلى باستخدام التعلم العميق
 
+<!-- ACADEMIC-INFO-START -->
+<p><strong>إعداد/المهندس:</strong> [حميدحسين محمد العذيب]</p>
+<p><strong>الكلية:</strong> [كلية المجتمع_صنعاء]</p>
+<p><strong> التخص:</strong> [Ai]</p>
+<p><strong>إشراف:</strong> [د/عبدالله يحيى محمد معاذ]</p>
+<!-- ACADEMIC-INFO-END -->
+
+
 تطبيق ويب عربي لتصنيف صور الكلى إلى أربع فئات، مع إعدادات منظمة وتقارير تدريب وتقييم.
 
 ![Python](https://img.shields.io/badge/Python-3.8-blue?logo=python)

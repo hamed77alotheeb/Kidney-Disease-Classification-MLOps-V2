@@ -1,0 +1,41 @@
+{
+  "method": "temperature_scaling",
+  "temperature": 0.69224,
+  "confidence_threshold": 0.98,
+  "confidence_threshold_percent": 98.0,
+  "class_names": [
+    "Cyst",
+    "Normal",
+    "Stone",
+    "Tumor"
+  ],
+  "calibration_fit_samples": 447,
+  "heldout_audit_samples": 447,
+  "heldout_audit_accuracy": 0.8971,
+  "heldout_audit_macro_f1": 0.8809,
+  "confidence_threshold_audit": {
+    "0.96": {
+      "selected": 252,
+      "correct": 251,
+      "coverage": 0.5638,
+      "accuracy": 0.996,
+      "wilson_95_percent_interval": [
+        0.9779,
+        0.9993
+      ]
+    },
+    "0.98": {
+      "selected": 209,
+      "correct": 209,
+      "coverage": 0.4676,
+      "accuracy": 1.0,
+      "wilson_95_percent_interval": [
+        0.982,
+        1.0
+      ]
+    }
+  },
+  "audit_method": "Temperature fitted on one stratified calibration subset; threshold results measured on a separate held-out subset.",
+  "test_split_used": false,
+  "note": "Internal calibration audit only. High confidence is not a guarantee of correctness on new or externally sourced images."
+}

@@ -1,0 +1,31 @@
+{
+  "status": "completed",
+  "run_id": "20261009_121117_223175",
+  "classes": [
+    "Cyst",
+    "Normal",
+    "Stone",
+    "Tumor"
+  ],
+  "seed": 42,
+  "image_size": [
+    224,
+    224
+  ],
+  "batch_size": 16,
+  "epochs_requested": 25,
+  "epochs_completed": 16,
+  "selection_metric": "val_accuracy",
+  "best_epoch": 11,
+  "best_val_accuracy": 0.9071588516235352,
+  "best_val_accuracy_percent": 90.7159,
+  "val_loss_at_best_accuracy": 0.3007708787918091,
+  "validation_accuracy_above_95_percent": false,
+  "candidate_model_path": "models\\best_candidate_model.h5",
+  "qualified_model_saved": false,
+  "qualified_model_path": null,
+  "training_history_path": "logs\\training_history.csv",
+  "calibration_path": "models\\confidence_calibration.json",
+  "test_split_loaded": false,
+  "test_split_evaluated": false
+}

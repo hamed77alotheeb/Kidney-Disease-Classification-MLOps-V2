@@ -1,0 +1,13 @@
+{
+  "method": "none",
+  "temperature": 1.0,
+  "class_names": [
+    "Cyst",
+    "Normal",
+    "Stone",
+    "Tumor"
+  ],
+  "source_model": "models\\best_finetuned_model.h5",
+  "test_split_used": false,
+  "note": "Uncalibrated softmax scores. Confidence scores are not guaranteed to represent real-world correctness."
+}

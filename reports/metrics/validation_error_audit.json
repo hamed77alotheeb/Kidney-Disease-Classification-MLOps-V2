@@ -1,0 +1,85 @@
+{
+  "model_file": "models\\best_candidate_model.h5",
+  "calibration_temperature": 0.69224,
+  "validation_images": 894,
+  "correct_predictions": 811,
+  "incorrect_predictions": 83,
+  "validation_accuracy": 0.9071588366890381,
+  "validation_accuracy_percent": 90.7159,
+  "macro_f1": 0.8926228455144831,
+  "class_order": [
+    "Cyst",
+    "Normal",
+    "Stone",
+    "Tumor"
+  ],
+  "classification_report": {
+    "Cyst": {
+      "precision": 0.9195402298850575,
+      "recall": 0.975609756097561,
+      "f1-score": 0.9467455621301775,
+      "support": 246.0
+    },
+    "Normal": {
+      "precision": 0.9431818181818182,
+      "recall": 0.8853333333333333,
+      "f1-score": 0.9133425034387895,
+      "support": 375.0
+    },
+    "Stone": {
+      "precision": 0.7520661157024794,
+      "recall": 0.8921568627450981,
+      "f1-score": 0.8161434977578476,
+      "support": 102.0
+    },
+    "Tumor": {
+      "precision": 0.925,
+      "recall": 0.8654970760233918,
+      "f1-score": 0.8942598187311178,
+      "support": 171.0
+    },
+    "accuracy": 0.9071588366890381,
+    "macro avg": {
+      "precision": 0.8849470409423388,
+      "recall": 0.9046492570498461,
+      "f1-score": 0.8926228455144831,
+      "support": 894.0
+    },
+    "weighted avg": {
+      "precision": 0.9113935371046521,
+      "recall": 0.9071588366890381,
+      "f1-score": 0.9077940859596101,
+      "support": 894.0
+    }
+  },
+  "confusion_matrix_rows_actual_columns_predicted": [
+    [
+      240,
+      0,
+      5,
+      1
+    ],
+    [
+      8,
+      332,
+      25,
+      10
+    ],
+    [
+      3,
+      7,
+      91,
+      1
+    ],
+    [
+      10,
+      13,
+      0,
+      148
+    ]
+  ],
+  "data_source": "validation split only",
+  "test_generator_created": false,
+  "test_split_used": false,
+  "note": "Validation was previously used for model selection. These results diagnose errors and are not an independent final evaluation of generalization."
+}

@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>تصنيف صور الكلى | Kidney AI</title>
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <header class="topbar">
+        <div class="brand-mark" aria-hidden="true">K</div>
+        <div>
+            <div class="brand-title">Kidney AI</div>
+            <div class="brand-subtitle">نظام تجريبي لتصنيف صور الكلى</div>
+        </div>
+        <span class="local-badge">تشغيل محلي</span>
+    </header>
+
+    <main class="page">
+        <section class="intro">
+            <p class="eyebrow">نموذج تعلم آلي · 4 فئات</p>
+            <h1>تصنيف صورة الكلى</h1>
+            <p class="intro-text">
+                ارفع صورة طبية مدعومة للحصول على الفئة التي يتوقعها النموذج
+                ودرجة الثقة المقدّرة.
+            </p>
+        </section>
+
+        <section class="panel upload-panel">
+            <div class="section-heading">
+                <span class="step-number">1</span>
+                <div>
+                    <h2>اختيار الصورة</h2>
+                    <p>الصيغ المدعومة: JPG، PNG، WEBP، TIFF، BMP · حتى 10 MB</p>
+                </div>
+            </div>
+
+            <form method="post" enctype="multipart/form-data">
+                <label class="file-picker" for="image">
+                    <span class="upload-icon" aria-hidden="true">↑</span>
+                    <span class="file-picker-title">اختر صورة من جهازك</span>
+                    <span class="file-picker-hint">اضغط هنا لتحديد الملف</span>
+                    <input id="image" name="image" type="file"
+                           accept=".jpg,.jpeg,.png,.webp,.tif,.tiff,.bmp"
+                           required>
+                </label>
+                <button class="primary-button" type="submit">
+                    تحليل الصورة
+                    <span aria-hidden="true">←</span>
+                </button>
+            </form>
+
+            {% if error %}
+                <div class="alert alert-error" role="alert">{{ error }}</div>
+            {% endif %}
+        </section>
+
+        {% if result %}
+        <section class="panel result-panel" aria-live="polite">
+            <div class="section-heading">
+                <span class="step-number">2</span>
+                <div>
+                    <h2>نتيجة النموذج</h2>
+                    <p class="file-name">{{ result.filename }}</p>
+                </div>
+            </div>
+
+            <div class="prediction-card">
+                <div>
+                    <p class="result-label">الفئة المتوقعة</p>
+                    <h3>{{ result.predicted_class_ar }}</h3>
+                    <p class="english-class">{{ result.predicted_class }}</p>
+                </div>
+                <div class="confidence">
+                    <span class="confidence-number">
+                        {{ "%.2f"|format(result.confidence_percent) }}%
+                    </span>
+                    <span class="confidence-caption">احتمال النموذج (غير معاير)</span>
+                </div>
+            </div>
+
+            <div class="progress-track" role="img"
+                 aria-label="احتمال النموذج (غير معاير)">
+                <div class="progress-fill"
+                     style="width: {{ result.confidence_percent }}%;"></div>
+            </div>
+<h3 class="probability-title">درجات الفئات الأربع</h3>
+            <div class="probability-list">
+                {% for item in result.probabilities_ar %}
+                <div class="probability-row">
+                    <div class="probability-label">
+                        <span>{{ item.name_ar }}</span>
+                        <span class="english-class">{{ item.name }}</span>
+                    </div>
+                    <div class="probability-value">
+                        {{ "%.2f"|format(item.percent) }}%
+                    </div>
+                    <div class="mini-track">
+                        <div class="mini-fill"
+                             style="width: {{ item.percent }}%;"></div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </section>
+        {% endif %}
+
+
+        <footer>Kidney Disease Classification · تشغيل محلي</footer>
+    </main>
+
+    <script>
+        const input = document.getElementById("image");
+        if (input) {
+            input.addEventListener("change", function () {
+                const pickerTitle = document.querySelector(".file-picker-title");
+                if (this.files && this.files.length && pickerTitle) {
+                    pickerTitle.textContent = this.files[0].name;
+                }
+            });
+        }
+    </script>
+</body>
+</html>

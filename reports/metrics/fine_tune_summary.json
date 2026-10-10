@@ -1,0 +1,15 @@
+{
+  "status": "completed",
+  "source_model": "models\\best_candidate_model.h5",
+  "fine_tuned_model": "models\\best_finetuned_model.h5",
+  "epochs_requested": 15,
+  "epochs_completed": 12,
+  "best_epoch": 7,
+  "best_validation_accuracy": 1.0,
+  "best_validation_accuracy_percent": 100.0,
+  "best_validation_loss": 0.00019241636618971825,
+  "original_model_overwritten": false,
+  "test_split_loaded": false,
+  "test_split_evaluated": false,
+  "calibration_file": "models\\fine_tuned_confidence_calibration.json"
+}

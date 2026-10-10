@@ -1,0 +1,17 @@
+{
+  "method": "temperature_scaling",
+  "temperature": 0.11825780131952274,
+  "calibration_samples": 894,
+  "calibration_accuracy": 1.0,
+  "negative_log_likelihood": -0.0,
+  "mean_calibrated_confidence": 1.0,
+  "class_names": [
+    "Cyst",
+    "Normal",
+    "Stone",
+    "Tumor"
+  ],
+  "source_model": "models\\best_finetuned_model.h5",
+  "test_split_used": false,
+  "note": "Calibration confidence is not a guarantee of correctness."
+}

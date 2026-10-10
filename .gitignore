@@ -49,3 +49,20 @@ dist/
 # OS
 .DS_Store
 Thumbs.db
+# Local backups and diagnostic artifacts
+*.backup*
+Untitled.ipynb
+reports/diagnostics/
+reports/figures/
+
+# BEGIN LOCAL DATA PROTECTION
+# Do not commit datasets, downloaded archives, or generated artifacts.
+/data/
+/datasets/
+/artifacts/
+/archive/
+
+# Per-image reports may expose local paths and dataset filenames.
+/reports/metrics/validation_*.csv
+
+# END LOCAL DATA PROTECTION

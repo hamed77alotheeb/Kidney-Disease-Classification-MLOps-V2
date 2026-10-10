@@ -1,59 +1,35 @@
-# Kidney Disease Classification MLOps
+<div align="center">
 
-Deep learning project for four-class kidney CT image classification.
+# 🩺 Kidney Disease Classification
 
-## Classes
+### نظام تصنيف صور الكلى باستخدام التعلم العميق
 
-- Cyst
-- Normal
-- Stone
-- Tumor
+تطبيق ويب عربي لتصنيف صور الكلى إلى أربع فئات، مع إعدادات منظمة وتقارير تدريب وتقييم.
 
-## Dataset
+![Python](https://img.shields.io/badge/Python-3.8-blue?logo=python)
+![TensorFlow](https://img.shields.io/badge/TensorFlow-2.10.1-orange?logo=tensorflow)
+![Flask](https://img.shields.io/badge/Flask-Web_App-black?logo=flask)
+![Classes](https://img.shields.io/badge/Classes-4-168aad)
 
-The cleaned dataset contains:
+[نظرة عامة](#-نظرة-عامة) ·
+[النتائج](#-نتائج-التقييم) ·
+[التشغيل](#-التثبيت-والتشغيل) ·
+[هيكل المشروع](#-هيكل-المشروع) ·
+[التقرير التفصيلي](docs/PROJECT_REPORT.md)
 
-- 11,929 unique images
-- Train: 8,348
-- Validation: 1,788
-- Test: 1,793
+</div>
 
-Exact duplicate image copies were removed before creating the final
-training, validation, and test split.
+---
 
-The final split was checked for exact SHA-256 hash overlap:
+## 📌 نظرة عامة
 
-- Train ∩ Validation = 0
-- Train ∩ Test = 0
-- Validation ∩ Test = 0
+يهدف المشروع إلى تصنيف صور الكلى إلى إحدى الفئات الأربع التالية:
 
-## Environment
+| الفئة البرمجية | الوصف |
+|---|---|
+| **Cyst** | كيس |
+| **Normal** | طبيعي |
+| **Stone** | حصى |
+| **Tumor** | ورم |
 
-- Python 3.8
-- TensorFlow 2.10.1
-- Keras 2.10.0
-- NumPy 1.24.4
-- Pandas 2.0.3
-- Scikit-learn 1.3.2
-
-GPU acceleration is available through the NVIDIA GPU environment.
-
-## Development Stages
-
-1. Dataset verification
-2. Baseline model
-3. Model training
-4. Model evaluation
-5. Inference
-6. API
-7. Testing
-8. Docker
-9. GitHub CI/CD
-
-## Important
-
-The final model accuracy will be calculated on a separate test set
-that is not used during model training.
-
-Confidence scores will represent model probabilities and will not
-be treated as a guarantee of medical diagnosis.
+يتضمن المشروع نموذجًا أساسيًا، وتجربة ضبط دقيق (Fine-tuning)، ووحدة تنبؤ، وواجهة ويب تستخدم Flask لرفع الصور وعرض نتائج النموذج.
